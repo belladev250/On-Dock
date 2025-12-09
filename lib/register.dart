@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:on_dock/login.dart';
+import 'package:on_dock/verify_email.dart';
 import 'constants/colors.dart';
 
 class Register extends StatefulWidget {
@@ -214,53 +216,73 @@ class _RegisterState extends State<Register> {
               const SizedBox(height: 40),
               
               // Sign Up Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    // Handle sign up
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.purple,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80),
-                    ),
-                  ),
-                  child: const Text(
-                    "Sign Up",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-              ),
+            SizedBox(
+  width: double.infinity,
+  child: ElevatedButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const VerifyEmail(), // your page here
+        ),
+      );
+    },
+    style: ElevatedButton.styleFrom(
+      backgroundColor: AppColors.purple,
+      foregroundColor: Colors.white,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(80),
+      ),
+    ),
+    child: const Text(
+      "Sign Up",
+      style: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      ),
+    ),
+  ),
+),
+
               
               const SizedBox(height: 24),
               
               // Sign In Link
-              Center(
-                child: RichText(
-                  text: TextSpan(
-                    text: "Already have an account? ",
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 14,
-                    ),
-                    children: const [
-                      TextSpan(
-                        text: "Sign In",
-                        style: TextStyle(
-                          color: AppColors.purple,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+            Center(
+  child: RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: "Already have an account? ",
+          style: TextStyle(
+            color: Colors.grey[600],
+            fontSize: 16,
+          ),
+        ),
+        WidgetSpan(
+          child: GestureDetector(
+            onTap: () {
+              // Navigate to Login screen
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Login()),
+              );
+            },
+            child: const Text(
+              "Sign In",
+              style: TextStyle(
+                color: AppColors.purple,
+                fontWeight: FontWeight.w600,
+                fontSize: 14,
               ),
+            ),
+          ),
+        ),
+      ],
+    ),
+  ),
+),
               
               const SizedBox(height: 40),
             ],

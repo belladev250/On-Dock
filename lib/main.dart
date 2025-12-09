@@ -3,6 +3,8 @@ import 'package:on_dock/splash_screen.dart';
 import 'package:on_dock/home_screen.dart';    
 import 'register.dart';
 import 'login.dart';
+import 'verify_code.dart';
+import 'verify_email.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -24,6 +26,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeScreen(),
        '/signin': (context) => const Login(),
        '/signup': (context) => const Register(),
+       '/verify-email': (context) => const VerifyEmail(),
+       '/verify-code': (context) => const VerifyCode(),
    
       },
     );
