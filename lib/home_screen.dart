@@ -88,36 +88,39 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           }
         },
-        child: Stack(
-          children: [
-            // Fading icon in the center
-            Center(
-              child: AnimatedSwitcher(
-                duration: const Duration(milliseconds: 500),
-                transitionBuilder: (Widget child, Animation<double> animation) {
-                  return FadeTransition(
-                    opacity: animation,
-                    child: child,
-                  );
-                },
-                child: SizedBox(
-                  key: ValueKey<int>(_currentPage),
-                  width: 300,
-                  height: 300,
-                  child: Image.asset(
-                    pages[_currentPage].iconPath,
-                    width: 300,
-                    height: 300,
-                    // ignore: deprecated_member_use
-                    color: pages[_currentPage].color.withOpacity(0.5),
-                  ),
-                ),
-              ),
-            ),
 
+        child: Stack(
+      children: [
+            // Fading icon in the center
+  Positioned(
+  top: 230, 
+  left: 0,
+  right: 0,
+  child: AnimatedSwitcher(
+    duration: const Duration(milliseconds: 500),
+    transitionBuilder: (Widget child, Animation<double> animation) {
+      return FadeTransition(
+        opacity: animation,
+        child: child,
+      );
+    },
+    child: SizedBox(
+      key: ValueKey<int>(_currentPage),
+      width: 300,
+      height: 300,
+      child: Image.asset(
+        pages[_currentPage].iconPath,
+        width: 300,
+        height: 300,
+        // ignore: deprecated_member_use
+        color: pages[_currentPage].color.withOpacity(0.5),
+      ),
+    ),
+  ),
+),
           // Fixed dots near bottom
           Positioned(
-            bottom: 180,
+            bottom: 230,
             left: 0,
             right: 0,
             child: Row(
@@ -131,7 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // Fading text below dots
           Positioned(
-            bottom: 130,
+            bottom: 150,
             left: 20,
             right: 20,
             child: AnimatedSwitcher(
@@ -147,8 +150,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 key: ValueKey<int>(_currentPage),
                 style: const TextStyle(
                   color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w600,
+                  fontFamily: "PlusJakartaSans",
                 ),
                 textAlign: TextAlign.center,
               ),
@@ -179,8 +183,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: const Text(
                         'Sign Up',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 22,
                           fontWeight: FontWeight.w600,
+                          fontFamily: "PlusJakartaSans",
                         ),
                       ),
                     ),
@@ -204,8 +209,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: const Text(
                         'Sign In',
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 22,
                           fontWeight: FontWeight.w600,
+                          fontFamily: "PlusJakartaSans",
                         ),
                       ),
                     ),
