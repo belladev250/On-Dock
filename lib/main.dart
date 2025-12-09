@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_dock/about_screen.dart';
 import 'package:on_dock/splash_screen.dart';  
 import 'package:on_dock/home_screen.dart';    
 import 'register.dart';
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
        '/signup': (context) => const Register(),
        '/verify-email': (context) => const VerifyEmail(),
        '/verify-code': (context) => const VerifyCode(),
+       '/about-you': (context) => const About(),
    
       },
     );

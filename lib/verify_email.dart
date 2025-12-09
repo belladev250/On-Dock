@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:on_dock/constants/colors.dart';
+import 'package:on_dock/verify_code.dart';
 
 class VerifyEmail extends StatefulWidget {
   const VerifyEmail({super.key});
@@ -11,7 +12,7 @@ class VerifyEmail extends StatefulWidget {
 class _VerifyEmailState extends State<VerifyEmail> {
   void _sendVerificationCode() {
     // Handle sending verification code
-    print('Sending verification code...');
+    
   }
 
   @override
@@ -39,7 +40,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
               
               const SizedBox(height: 20),
               
-              // Description
+              
               const Text(
                 "To continue, please verify your email. The verification code is to be sent to your registered email address.",
                 style: TextStyle(
@@ -56,7 +57,14 @@ class _VerifyEmailState extends State<VerifyEmail> {
               SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: _sendVerificationCode,
+                  onPressed: () {
+                   Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                builder: (context) => const VerifyCode(), 
+               ),
+                );
+             },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.purple,
                     foregroundColor: Colors.white,
