@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:on_dock/forgetpassword.dart';
 import 'package:on_dock/register.dart';
 import 'constants/colors.dart';
 
@@ -176,13 +177,18 @@ class _LoginState extends State<Login> {
               
               const SizedBox(height: 12),
               
-              // Forgot Password Link - BELOW the password field
+              
               Align(
                 alignment: Alignment.centerRight,
                 child: GestureDetector(
                   onTap: () {
-                    // Handle forgot password
-                  },
+               Navigator.push(
+               context,
+               MaterialPageRoute(
+               builder: (context) => const Forgetpassword(), 
+        ),
+      );
+    },
                   child: const Text(
                     "FORGET PASSWORD?",
                     style: TextStyle(
@@ -341,4 +347,7 @@ class _LoginState extends State<Login> {
       ],
     );
   }
+}
+
+class ForgotPasswordPage {
 }

@@ -6,6 +6,7 @@ import 'register.dart';
 import 'login.dart';
 import 'verify_code.dart';
 import 'verify_email.dart';
+import 'forgetpassword.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
        '/verify-email': (context) => const VerifyEmail(),
        '/verify-code': (context) => const VerifyCode(),
        '/about-you': (context) => const About(),
+        '/forgotPassword': (context) => const Forgetpassword(),
    
       },
     );
